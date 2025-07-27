@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>美味しい加工食品センター - 全国の逸品を食卓へ</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <!-- Remix Icon -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet"/>
+
+    <style>
+        /* カスタムスタイル */
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: #FDF8F2; /* 温かみのある背景色 */
+            color: #4A3F35; /* 落ち着いたテキスト色 */
+        }
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+        /* GSAPで非表示にするための初期スタイル */
+        .gsap-reveal {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(50px);
+        }
+        .gsap-reveal-card {
+             opacity: 0;
+             visibility: hidden;
+             transform: translateY(30px) scale(0.95);
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <!-- ヘッダー -->
+    <header class="fixed top-0 left-0 w-full bg-white/80 backdrop-blur-md shadow-sm z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold font-serif text-amber-800">人身売買美味しい加工食品センター</a>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#concept" class="hover:text-amber-600 transition-colors">私たちのこだわり</a>
+                <a href="#products" class="hover:text-amber-600 transition-colors">商品一覧</a>
+                <a href="#news" class="hover:text-amber-600 transition-colors">お知らせ</a>
+                <a href="#" class="bg-amber-700 text-white px-4 py-2 rounded-full hover:bg-amber-800 transition-colors">
+                    <i class="ri-shopping-cart-2-line mr-1"></i> カート
+                </a>
+            </nav>
+            <button id="menu-btn" class="md:hidden z-50">
+                <i class="ri-menu-3-line text-2xl"></i>
+            </button>
+        </div>
+    </header>
+    
+    <!-- モバイルメニュー -->
+    <div id="mobile-menu" class="fixed top-0 left-0 w-full h-full bg-white/90 backdrop-blur-lg z-40 flex flex-col justify-center items-center space-y-8 text-xl transition-transform transform -translate-y-full md:hidden">
+        <a href="#concept" class="menu-item hover:text-amber-600">私たちのこだわり</a>
+        <a href="#products" class="menu-item hover:text-amber-600">商品一覧</a>
+        <a href="#news" class="menu-item hover:text-amber-600">お知らせ</a>
+        <a href="#" class="menu-item bg-amber-700 text-white px-6 py-3 rounded-full hover:bg-amber-800">
+            <i class="ri-shopping-cart-2-line mr-2"></i> カートを見る
+        </a>
+    </div>
+
+
+    <main>
+        <!-- ヒーローセクション -->
+        <section class="h-screen min-h-[600px] flex items-center justify-center relative bg-cover bg-center" style="background-image:url('family-7392843_1280.jpg');">
+            <div class="absolute inset-0 bg-black/30"></div>
+            <div class="text-center text-white z-10 p-6">
+                <h1 class="text-4xl md:text-6xl font-serif mb-4 hero-title">
+                    <span class="char">日</span><span class="char">本</span><span class="char">中</span><span class="char">の</span><span class="char">「</span><span class="char">美</span><span class="char">味</span><span class="char">し</span><span class="char">い</span><span class="char">」</span><span class="char">が</span><span class="char">、</span><br class="md:hidden">
+                    <span class="char">あ</span><span class="char">な</span><span class="char">た</span><span class="char">の</span><span class="char">食</span><span class="char">卓</span><span class="char">へ</span><span class="char">。</span>
+                </h1>
+                <p class="text-lg md:text-xl max-w-2xl mx-auto hero-subtitle">
+                    作り手の想いが詰まった、とっておきの加工食品を厳選してお届けします。
+                </p>
+            </div>
+        </section>
+
+        <!-- コンセプトセクション -->
+        <section id="concept" class="py-20 md:py-32">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-serif mb-6 gsap-reveal">私たちのこだわり</h2>
+                <p class="max-w-3xl mx-auto leading-relaxed mb-12 gsap-reveal">
+                    私たちは、ただ食品を売るだけではありません。<br>
+                    その土地の風土で育まれた素材、受け継がれてきた製法、そして何より作り手の情熱。<br>
+                    一つ一つの商品に込められた物語を、美味しさと共に食卓へお届けすることが私たちの使命です。
+                </p>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-lg shadow-md gsap-reveal-card">
+                        <i class="ri-user-heart-line text-4xl text-amber-700 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">作り手の顔が見える</h3>
+                        <p>全国の生産者を直接訪ね、想いやこだわりを確かめた商品だけを扱っています。</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md gsap-reveal-card">
+                        <i class="ri-seedling-line text-4xl text-green-700 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">厳選された素材</h3>
+                        <p>旬の素材や伝統的な製法を大切にし、本当に体に優しく美味しいものを選んでいます。</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md gsap-reveal-card">
+                        <i class="ri-truck-line text-4xl text-blue-700 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">産地から新鮮直送</h3>
+                        <p>最高の状態で味わっていただくため、産地から丁寧な梱包で直送いたします。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- おすすめ商品セクション -->
+        <section id="products" class="py-20 md:py-32 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-serif text-center mb-12 gsap-reveal">おすすめ商品</h2>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- 商品カード 1 -->
+                    <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 gsap-reveal-card">
+                        <img src="boys-1158803_1280.jpg?text=絶品！鮭フレーク" alt="鮭フレーク" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">インド産 熟成鮭フレーク</h3>
+                            <p class="text-sm text-gray-600 mb-4">ご飯が止まらない、手ほぐしの逸品。</p>
+                            <div class="text-lg font-bold text-amber-800">880円 (税込)</div>
+                        </div>
+                    </div>
+                    <!-- 商品カード 2 -->
+                    <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 gsap-reveal-card">
+                        <img src="alone-1869997_1280.jpg" alt="梅干し" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">紀州南高梅 はちみつ漬け</h3>
+                            <p class="text-sm text-gray-600 mb-4">塩味と甘みの絶妙なバランス。</p>
+                            <div class="text-lg font-bold text-amber-800">1,500円 (税込)</div>
+                        </div>
+                    </div>
+                    <!-- 商品カード 3 -->
+                    <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 gsap-reveal-card">
+                        <img src="girl-1871104_1280.jpg" alt="ベーコン" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">信州産 無添加スモークベーコン</h3>
+                            <p class="text-sm text-gray-600 mb-4">桜チップの香りが食欲をそそります。</p>
+                            <div class="text-lg font-bold text-amber-800">980円 (税込)</div>
+                        </div>
+                    </div>
+                    <!-- 商品カード 4 -->
+                    <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 gsap-reveal-card">
+                        <img src="woman-7991234_1280.jpg" alt="だしパック" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">瀬戸内産 黄金のだしパック</h3>
+                            <p class="text-sm text-gray-600 mb-4">これひとつで、いつもの料理が料亭の味に。</p>
+                            <div class="text-lg font-bold text-amber-800">1,800円 (税込)</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-12">
+                     <a href="#" class="inline-block bg-amber-700 text-white px-8 py-3 rounded-full hover:bg-amber-800 transition-all duration-300 transform hover:scale-105 gsap-reveal">
+                        もっと商品を見る
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- お知らせセクション -->
+        <section id="news" class="py-20 md:py-32">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-serif text-center mb-12 gsap-reveal">お知らせ</h2>
+                <div class="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-md">
+                    <ul class="space-y-6">
+                        <li class="border-b pb-4 gsap-reveal-card">
+                            <span class="text-gray-500 text-sm">2025.07.26</span>
+                            <a href="#" class="block font-bold mt-1 hover:text-amber-700">夏ギフト特集を開始しました。お中元にぴったりの商品を取り揃えています。</a>
+                        </li>
+                        <li class="border-b pb-4 gsap-reveal-card">
+                            <span class="text-gray-500 text-sm">2025.07.15</span>
+                            <a href="#" class="block font-bold mt-1 hover:text-amber-700">新商品「瀬戸内レモンの万能ソース」が入荷しました。</a>
+                        </li>
+                        <li class="border-b pb-4 gsap-reveal-card">
+                            <span class="text-gray-500 text-sm">2025.07.01</span>
+                            <a href="#" class="block font-bold mt-1 hover:text-amber-700">送料改定のお知らせ。</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- フッター -->
+    <footer class="bg-stone-800 text-white pt-16 pb-8">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-serif mb-4">人身売買美味しい加工食品センター</h3>
+                    <p class="text-stone-400">日本中の「美味しい」が、あなたの食卓へ。</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">サイトマップ</h4>
+                    <ul class="space-y-2 text-stone-400">
+                        <li><a href="#concept" class="hover:text-white">私たちのこだわり</a></li>
+                        <li><a href="#products" class="hover:text-white">商品一覧</a></li>
+                        <li><a href="#news" class="hover:text-white">お知らせ</a></li>
+                        <li><a href="#" class="hover:text-white">ご利用ガイド</a></li>
+                        <li><a href="#" class="hover:text-white">プライバシーポリシー</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">フォローする</h4>
+                    <div class="flex space-x-4 text-2xl">
+                        <a href="https://instagram.com/_.metalepsis._" class="hover:text-amber-400"><i class="ri-instagram-line"></i></a>
+                        <a href="https://x.com/metalepsis_jp" class="hover:text-amber-400"><i class="ri-twitter-x-line"></i></a>
+                        <a href="google.com" class="hover:text-amber-400"><i class="ri-facebook-box-fill"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-stone-700 pt-8 text-center text-stone-500 text-sm">
+                &copy; 2025 美味しい加工食品センター. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- GSAP & ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // GSAPプラグインの登録
+            gsap.registerPlugin(ScrollTrigger);
+
+            // --- ヒーローセクションのアニメーション ---
+            const heroTimeline = gsap.timeline();
+            heroTimeline
+                .from('.hero-title .char', {
+                    duration: 0.8,
+                    opacity: 0,
+                    y: 20,
+                    stagger: 0.05,
+                    ease: 'power3.out'
+                })
+                .from('.hero-subtitle', {
+                    duration: 1,
+                    opacity: 0,
+                    y: 20,
+                    ease: 'power3.out'
+                }, '-=0.5'); // 前のアニメーションが0.5秒終わる前に開始
+
+            // --- スクロールトリガーによる表示アニメーション ---
+            // .gsap-revealクラスを持つ要素に対する汎用的なアニメーション
+            gsap.utils.toArray('.gsap-reveal').forEach(elem => {
+                gsap.fromTo(elem, 
+                    { 
+                        autoAlpha: 0, // visibility: hidden, opacity: 0
+                        y: 50
+                    }, 
+                    {
+                        duration: 1,
+                        autoAlpha: 1, // visibility: visible, opacity: 1
+                        y: 0,
+                        ease: 'power3.out',
+                        scrollTrigger: {
+                            trigger: elem,
+                            start: 'top 85%', // 要素の上端がビューポートの85%の位置に来たら開始
+                            toggleActions: 'play none none none',
+                        }
+                    }
+                );
+            });
+            
+            // .gsap-reveal-cardクラスを持つ要素に対する一括アニメーション
+            // ScrollTrigger.batchを使うと、同じビューポートに入った要素をまとめて処理できる
+            ScrollTrigger.batch(".gsap-reveal-card", {
+                interval: 0.1, // 0.1秒ずつずらしてアニメーション開始
+                batchMax: 4, // 一度に最大4つまで
+                onEnter: batch => gsap.to(batch, {
+                    autoAlpha: 1,
+                    y: 0,
+                    scale: 1,
+                    stagger: { each: 0.15, grid: [1, 4] },
+                    overwrite: true,
+                    ease: 'power3.out'
+                }),
+                onLeave: batch => gsap.set(batch, { autoAlpha: 0, y: 30, scale: 0.95, overwrite: true }),
+                onEnterBack: batch => gsap.to(batch, { autoAlpha: 1, y: 0, scale: 1, stagger: 0.15, overwrite: true }),
+                onLeaveBack: batch => gsap.set(batch, { autoAlpha: 0, y: 30, scale: 0.95, overwrite: true }),
+                start: "top 90%",
+            });
+
+            // --- モバイルメニューの制御 ---
+            const menuBtn = document.getElementById('menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuItems = document.querySelectorAll('.menu-item');
+            
+            const toggleMenu = () => {
+                const isOpened = mobileMenu.classList.contains('translate-y-0');
+                if (isOpened) {
+                    mobileMenu.classList.remove('translate-y-0');
+                    mobileMenu.classList.add('-translate-y-full');
+                    menuBtn.innerHTML = '<i class="ri-menu-3-line text-2xl"></i>';
+                } else {
+                    mobileMenu.classList.remove('-translate-y-full');
+                    mobileMenu.classList.add('translate-y-0');
+                    menuBtn.innerHTML = '<i class="ri-close-line text-2xl"></i>';
+                }
+            };
+
+            menuBtn.addEventListener('click', toggleMenu);
+            // メニュー項目をクリックしたらメニューを閉じる
+            menuItems.forEach(item => {
+                item.addEventListener('click', toggleMenu);
+            });
+        });
+    </script>
+
+</body>
+</html>
